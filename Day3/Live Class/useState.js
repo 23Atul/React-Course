@@ -1,12 +1,12 @@
 // counter 
 
-let count1=0
-const Counter1 = ()=>{
-    const incrementFunc1 =()=>{
+let count1 = 0
+const Counter1 = () => {
+    const incrementFunc1 = () => {
         count1++;
         console.log(count1);
     }
-    return(
+    return (
         <>
             <h1>Counter : {count1}</h1>
             <button onClick={incrementFunc1}>Increment</button>
@@ -59,7 +59,7 @@ const Counter2 = () => {
 // prints all react Hooks
 
 
-const App=()=>{
+const App = () => {
 
     //console.log(React.useState());  // [undefined,f()]
     // console.log(React.useState(10));  // [10,f()]
@@ -67,7 +67,7 @@ const App=()=>{
     // console.log(count,f); // 10,function to update the count value
 
 
-    return(
+    return (
         <>
             <h1>Counter</h1>
         </>
@@ -90,28 +90,69 @@ const App=()=>{
 // counter using useState Hook
 
 
-const Counter3=()=>{
+const Counter3 = () => {
 
-    const [count3, setCount]= React.useState(0);
+    const [count3, setCount] = React.useState(0);
 
 
-
-    function incrementfunc3(){
-        setCount(count3+1)
+    // try using function declearation here not the function expression
+    function incrementfunc3() {
+        setCount(count3 + 1) // dont do count3 ++ 
     }
 
-    function decrementfunc3(){
-        setCount(count3-1);
+    function decrementfunc3() {
+        setCount(count3 - 1);
     }
-    return(
+    return (
         <>
             <h1>Counter: {count3}</h1>
-            <button onClick={incrementfunc3}>Increment</button>
             <button onClick={decrementfunc3}>Decrement</button>
+
+            <button onClick={incrementfunc3}>Increment</button>
         </>
     )
 };
 
-ReactDOM.createRoot(document.querySelector("#root")).render(<Counter3/>)
+// ReactDOM.createRoot(document.querySelector("#root")).render(<Counter3 />)
 
 // only <h1>Counter: {count3}</h1> gets updatd every time and not the whole component gets re rendered
+
+
+
+
+
+// counter using useState with reset button
+
+
+const Counter4 = () => {
+
+    const [count4, setCount] = React.useState(0);
+
+
+    // try using function declearation here not the function expression
+    function incrementfunc4() {
+        setCount(count4 + 1) // dont do count3 ++ 
+        // console.log(count4);
+    }
+
+    function decrementfunc4() {
+        setCount(count4 - 1);
+        // console.log(count4);
+    }
+
+    function resetCount(){
+        setCount(0)
+        // console.log(count4);
+    }
+    return (
+        <>
+            <h1>Counter: {count4}</h1>
+            <button onClick={decrementfunc4}>Decrement</button>
+            <button onClick={resetCount}>Reset</button>
+            <button onClick={incrementfunc4}>Increment</button>
+
+        </>
+    )
+};
+
+ReactDOM.createRoot(document.querySelector("#root")).render(<Counter4 />)
