@@ -74,13 +74,44 @@ const App=()=>{
     )
 };
 
-ReactDOM.createRoot(document.querySelector("#root")).render(<App/>)
+// ReactDOM.createRoot(document.querySelector("#root")).render(<App/>)
 
 // console.log(React.useState());
 // [undefined, f()]
 // returns array with 2 values. 1st is the initial value we provide and 2nd is the function which updates the 1st value
 
 
+// const [ count,setCount]= React.useState(10);
 
 
 
+
+
+// counter using useState Hook
+
+
+const Counter3=()=>{
+
+    const [count3, setCount]= React.useState(0);
+
+
+
+    function incrementfunc3(){
+        setCount(count3+1)
+    }
+
+    function decrementfunc3(){
+        setCount(count3-1);
+    }
+    return(
+        <>
+            <h1>Counter: {count3}</h1>
+            <button onClick={incrementfunc3}>Increment</button>
+            <button onClick={decrementfunc3}>Decrement</button>
+        </>
+    )
+};
+
+ReactDOM.createRoot(document.querySelector("#root")).render(<Counter3/>)
+
+// only <h1>Counter: {count3}</h1> gets updatd every time and not the whole component gets re rendered
