@@ -242,11 +242,10 @@ const Products = [
 ]
 
 
-const DisplayProducts=(props)=>{
-     
+const DisplayProducts = ((props)=>
+{
     console.log(props.data);
-    
-};
+});
 
 const App = ()=>
 {

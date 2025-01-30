@@ -29,7 +29,8 @@ let DisplayTodo = (props) => {
         <tr>
             <td>{id}</td>
             <td>{title}</td>
-            <td style={{color:isCompleted?"green":"red"}}>{isCompleted ? "Completed" : "Pending"}</td>
+            <td style={{color:isCompleted?"green":"red"}}>{isCompleted ? "Completed" : "Pending"}</td>   
+            {/* conditional styling */}
         </tr>
     )
 }
